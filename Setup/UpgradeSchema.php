@@ -52,6 +52,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
             }
         }
 
+        if (version_compare($context->getVersion(), '2.0.2', '<')) {
+            if ($installer->tableExists('cms_page')) {
+                $connection->modifyColumn(
+                    $installer->getTable('cms_page'),
+                    'mp_exclude_sitemap',
+                    ['type' => Table::TYPE_INTEGER, 'nullable' => true, 'default' => 0]
+                );
+            }
+        }
+
         $installer->endSetup();
     }
 }

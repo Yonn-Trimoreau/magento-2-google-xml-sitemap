@@ -31,6 +31,7 @@
                     <item name="formElement" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Exclude Sitemap</item>
                     <item name="notice" xsi:type="string" translate="true">Added by Mageplaza Sitemap</item>
+                    <item name="default" xsi:type="string">No</item>
                 </item>
             </argument>
         </field>
